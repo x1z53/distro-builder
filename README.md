@@ -1,2 +1,1 @@
-# atomic-distro-installer
-Сборка универсального установочного образа
+# test-builder

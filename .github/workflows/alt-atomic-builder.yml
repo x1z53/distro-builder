@@ -1,0 +1,31 @@
+name: Build live installer ISO
+
+on:
+  schedule:
+    - cron: '0 0 1 * *'
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run build script
+        run: ./main.sh
+
+      - name: Fix /workspace permissions
+        run: |
+          sudo chown -R runner:runner ${{ github.workspace }}/out
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: regular-gnome-atomic
+          path: ${{ github.workspace }}/out/
+          if-no-files-found: error
