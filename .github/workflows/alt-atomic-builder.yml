@@ -19,9 +19,9 @@ jobs:
       - name: Run build script
         run: ./main.sh
 
-      - name: Fix /workspace permissions
-        run: |
-          sudo chown -R root:root ${{ github.workspace }}/out
+#      - name: Fix /workspace permissions
+#        run: |
+#          sudo chown -R root:root ${{ github.workspace }}/out
 
 #      - name: Fix /workspace permissions
 #        run: |
