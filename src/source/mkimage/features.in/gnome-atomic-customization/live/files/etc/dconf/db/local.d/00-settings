@@ -4,3 +4,10 @@ exec='ptyxis'
 [org/gnome/shell]
 favorite-apps=['atomic-installer.desktop', 'firefox.desktop', 'org.gnome.TextEditor.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Ptyxis.desktop']
 enabled-extensions=['appindicatorsupport@rgcjonas.gmail.com', 'dash-to-dock@micxgx.gmail.com']
+
+[org/gnome/desktop/lockdown]
+disable-lock-screen=true
+
+[org/gnome/settings-daemon/plugins/power]
+sleep-inactive-ac-timeout=0
+sleep-inactive-battery-timeout=0
