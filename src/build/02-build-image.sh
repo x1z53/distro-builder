@@ -4,8 +4,8 @@ set -e
 
 echo "::group:: ===$(basename "$0")==="
 
-sudo mkdir -p /workspace/out
-echo "Тестовая сборка ISO" | sudo tee /workspace/out/test.txt > /dev/null
+mkdir -p "${GITHUB_WORKSPACE}/out"
+echo "Тестовая сборка ISO" | sudo tee ${GITHUB_WORKSPACE}/out/test.txt > /dev/null
 
 #sudo podman exec iso-builder su - builder -c "
 #  cd ~ && \
