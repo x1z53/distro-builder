@@ -4,11 +4,8 @@ set -e
 
 echo "::group:: ===$(basename "$0")==="
 
-# Создаем каталог, если его нет
-mkdir -p /workspace/out
-
-# Записываем тестовую информацию в файл
-echo "Тестовая сборка ISO" > /workspace/out/test.txt
+sudo mkdir -p /workspace/out
+echo "Тестовая сборка ISO" | sudo tee /workspace/out/test.txt > /dev/null
 
 #sudo podman exec iso-builder su - builder -c "
 #  cd ~ && \
