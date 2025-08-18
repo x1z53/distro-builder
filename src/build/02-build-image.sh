@@ -8,7 +8,7 @@ sudo podman exec iso-builder su - builder -c "
   cd ~ && \
   git clone https://github.com/${GITHUB_REPOSITORY} --branch ${GITHUB_REF##*/} test-builder && \
   cd test-builder/src/source && \
-  git clone https://github.com/altlinux/mkimage-profiles mkimage-profiles && \
+  git clone -b next https://altlinux.space/mkimage-profiles/mkimage-profiles.git mkimage-profiles && \
   cp -rf mkimage/* mkimage-profiles && \
   cd mkimage-profiles
   make \

@@ -1,12 +1,10 @@
 name: Build live installer ISO
 
 on:
-#  schedule:
-#    - cron: '0 0 1 * *'
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
   workflow_dispatch:
 
 jobs:
@@ -29,6 +27,14 @@ jobs:
           name: regular-gnome-atomic
           path: ${{ github.workspace }}/out/
           if-no-files-found: error
+
+      - name: Upload build log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-log
+          path: ${{ github.workspace }}/out/build.log
+          if-no-files-found: warn
 
       # Шаг для деплоя файлов в Yandex Object Storage
       - name: Deploy to Yandex Object Storage
