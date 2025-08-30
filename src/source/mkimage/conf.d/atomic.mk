@@ -14,4 +14,3 @@ endif
 	@$(call add,THE_PACKAGES,bluez)
 
 endif
-
