@@ -1,4 +1,4 @@
-name: Build live installer ISO
+name: Build Distro
 
 on:
   push:
