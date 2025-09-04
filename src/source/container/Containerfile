@@ -10,7 +10,8 @@ STOPSIGNAL SIGRTMIN+3
 
 # Install packages for building
 RUN apt-get update && \
-    apt-get install -y sudo git make hasher hasher-priv mkimage mkimage-preinstall mki-build qemu-user-static-binfmt f2fs-tools fsdisk && \
+    apt-get install -y sudo git make hasher hasher-priv mkimage mkimage-preinstall mki-build qemu-user-static-binfmt f2fs-tools && \
+    apt-get install -y sfdisk parted kpartx e2fsprogs dosfstools && \
     apt-get clean -y
 
 # Remove !container from hasher-privd service
