@@ -8,7 +8,7 @@ sudo podman exec iso-builder su - builder -c "
   cd ~
   git clone https://altlinux.space/x1z53/alt-mobile-mkimage-profiles mkimage-profiles
   cd mkimage-profiles
-  git checkout -b ready-set origin/ready-set
+  git checkout -b next origin/next
   mki-build -- make \
     vm/alt-mobile-phosh-{def,pine}.img \
     BRANCH='sisyphus' ARCH='aarch64' \
